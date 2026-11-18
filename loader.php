@@ -5,6 +5,7 @@
  * Plugin URI:  https://themekraft.com/products/all-in-one-invite-codes-buddyforms/
  * Description: Create Invite only Forms
  * Version: 1.0.1-beta.1
+ * Requires PHP: 7.4
  * Requires Plugins: all-in-one-invite-codes, buddyforms
  * Author: ThemeKraft
  * Author URI: https://themekraft.com/
@@ -133,13 +134,9 @@ if ( ! function_exists( 'bfe_fs' ) ) {
 		global $bfe_fs;
 
 		if ( ! isset( $bfe_fs ) ) {
-			// Include Freemius SDK.
-			if ( file_exists( dirname( dirname( __FILE__ ) ) . '/all-in-one-invite-codes/includes/resources/freemius/start.php' ) ) {
-				// Try to load SDK from parent plugin folder.
-				require_once dirname( dirname( __FILE__ ) ) . '/all-in-one-invite-codes/includes/resources/freemius/start.php';
-			} elseif ( file_exists( dirname( dirname( __FILE__ ) ) . '/all-in-one-invite-codes-premium/includes/resources/freemius/start.php' ) ) {
-				// Try to load SDK from premium parent plugin folder.
-				require_once dirname( dirname( __FILE__ ) ) . '/all-in-one-invite-codes-premium/includes/resources/freemius/start.php';
+			// The Freemius SDK comes with All in One Invite Codes, which loads it before this add-on initializes.
+			if ( ! function_exists( 'fs_dynamic_init' ) ) {
+				return false;
 			}
 
 			$bfe_fs = fs_dynamic_init( array(
