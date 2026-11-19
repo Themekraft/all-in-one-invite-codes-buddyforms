@@ -123,6 +123,7 @@ if ( ! aioic_buddyforms_parent_is_active() ) {
 
 
 function aioic_buddyforms_load_plugin_textdomain() {
+	// phpcs:ignore PluginCheck.CodeAnalysis.DiscouragedFunctions.load_plugin_textdomainFound -- Kept on purpose: premium copies and builds not hosted on wordpress.org load their own translations from /languages.
 	load_plugin_textdomain( 'all_in_one_invite_codes-buddyforms', false, basename( dirname( __FILE__ ) ) . '/languages' );
 }
 
