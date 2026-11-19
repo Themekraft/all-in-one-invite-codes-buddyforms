@@ -9,7 +9,8 @@
  * Requires Plugins: all-in-one-invite-codes, buddyforms
  * Author: ThemeKraft
  * Author URI: https://themekraft.com/
- * Licence: GPLv3
+ * License: GPLv2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Network: false
  * Text Domain: all-in-one-invite-codes-buddyforms
  * Domain Path: /languages
